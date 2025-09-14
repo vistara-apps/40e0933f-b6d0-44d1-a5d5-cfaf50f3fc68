@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjkxNTIsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgwMmVmNzkwRGQ3OTkzQTM1ZkQ4NDdDMDUzRURkQUU5NDBEMDU1NTk2In0",
+    "payload": "eyJkb21haW4iOiJ2ZXJpbGV4LmFwcCJ9",
+    "signature": "MHgxMGQwZGU4ZGYwZDUwZTdmMGIxN2YxMTU2NDI1MjRmZTY0MTUyZGU4ZGU1MWU0MThiYjU4ZjVmZmQxYjRjNDBiNGVlZTRhNDcwNmVmNjhlMzQ0ZGQ5MDBkYmQyMmNlMmVlZGY5ZGQ0N2JlNWRmNzMwYzUxNjE4OWVjZDJjY2Y0MDFj"
+  },
+  "frame": {
+    "version": "1",
+    "name": "VeriLex",
+    "homeUrl": "https://verilex.app",
+    "iconUrl": "https://verilex.app/icon.png",
+    "splashImageUrl": "https://verilex.app/splash.png",
+    "splashBackgroundColor": "#1e40af",
+    "webhookUrl": "https://verilex.app/api/webhook",
+    "subtitle": "AI-powered legal verification",
+    "description": "Get AI-generated legal memos verified by top city lawyers. Streamline your legal research with expert human oversight.",
+    "screenshotUrls": [
+      "https://verilex.app/screenshot1.png",
+      "https://verilex.app/screenshot2.png",
+      "https://verilex.app/screenshot3.png"
+    ],
+    "primaryCategory": "productivity",
+    "tags": ["legal", "ai", "lawyers", "business", "compliance"],
+    "heroImageUrl": "https://verilex.app/hero.png",
+    "tagline": "Legal AI meets human expertise",
+    "ogTitle": "VeriLex - AI-Powered Legal Verification",
+    "ogDescription": "Get instant AI-generated legal memos, then have them verified by qualified lawyers from leading firms.",
+    "ogImageUrl": "https://verilex.app/og-image.png"
+  }
+}
