@@ -1,0 +1,14 @@
+{
+  "name": "VeriLex",
+  "description": "VeriLex is a Base Mini App built with Zara.",
+  "image": "https://dummyimage.com/1200x628/0a0b0d/ffffff.png&text=OG",
+  "external_url": "https://40e0933f-b6d0-44d1-a5d5-cfaf50f3fc68.vercel.app",
+  "properties": {
+    "app": {
+      "name": "VeriLex",
+      "description": "VeriLex is a Base Mini App built with Zara.",
+      "url": "https://40e0933f-b6d0-44d1-a5d5-cfaf50f3fc68.vercel.app",
+      "icon": "https://0co.to/images/zara-2.png"
+    }
+  }
+}
