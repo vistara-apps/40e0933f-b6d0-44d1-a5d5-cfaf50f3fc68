@@ -6,14 +6,32 @@ import { StatusIndicator } from './StatusIndicator';
 import { cn, formatDate, calculateReadingTime } from '../lib/utils';
 import type { MemoDisplayProps } from '../lib/types';
 
-export function MemoDisplay({ 
-  memo, 
+export function MemoDisplay({
+  memo,
   variant = 'preview',
-  onRequestReview 
+  onRequestReview
 }: MemoDisplayProps) {
   const [isExpanded, setIsExpanded] = useState(variant === 'final');
 
   const readingTime = calculateReadingTime(memo.generatedContent);
+
+  // Map memo status to StatusIndicator compatible status
+  const getStatusIndicatorStatus = (memoStatus: string) => {
+    switch (memoStatus) {
+      case 'draft':
+        return 'pending';
+      case 'generated':
+        return 'pending';
+      case 'under_review':
+        return 'in_progress';
+      case 'approved':
+        return 'approved';
+      case 'rejected':
+        return 'rejected';
+      default:
+        return 'pending';
+    }
+  };
 
   return (
     <div className="card">
@@ -27,11 +45,11 @@ export function MemoDisplay({
             <div>
               <h3 className="font-semibold">Legal Memorandum</h3>
               <div className="flex items-center gap-2 mt-1">
-                <StatusIndicator status={memo.status} />
-                <span className="text-xs text-text-secondary">
+                <StatusIndicator status={getStatusIndicatorStatus(memo.status)} />
+                <span className="text-xs text-gray-600">
                   {formatDate(memo.createdAt)}
                 </span>
-                <span className="text-xs text-text-secondary">
+                <span className="text-xs text-gray-600">
                   • {readingTime} min read
                 </span>
               </div>
@@ -42,14 +60,14 @@ export function MemoDisplay({
           <div className="flex items-center gap-2">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="p-2 text-text-secondary hover:text-text-primary transition-colors duration-200"
+              className="p-2 text-gray-600 hover:text-gray-900 transition-colors duration-200"
             >
               <Eye className="w-4 h-4" />
             </button>
-            <button className="p-2 text-text-secondary hover:text-text-primary transition-colors duration-200">
+            <button className="p-2 text-gray-600 hover:text-gray-900 transition-colors duration-200">
               <Download className="w-4 h-4" />
             </button>
-            <button className="p-2 text-text-secondary hover:text-text-primary transition-colors duration-200">
+            <button className="p-2 text-gray-600 hover:text-gray-900 transition-colors duration-200">
               <Share2 className="w-4 h-4" />
             </button>
           </div>
@@ -97,7 +115,7 @@ export function MemoDisplay({
                 {memo.citations.map((citation, index) => (
                   <div key={index} className="p-3 bg-gray-50 rounded-md">
                     <div className="font-medium text-sm">{citation.title}</div>
-                    <div className="text-sm text-text-secondary">{citation.source}</div>
+                    <div className="text-sm text-gray-600">{citation.source}</div>
                     {citation.url && (
                       <a
                         href={citation.url}
@@ -120,7 +138,7 @@ export function MemoDisplay({
       <div className="p-4 border-t border-border bg-gray-50">
         {memo.reviewStatus === 'pending' && onRequestReview && (
           <div className="flex items-center justify-between">
-            <div className="text-sm text-text-secondary">
+            <div className="text-sm text-gray-600">
               Get this memo reviewed by a qualified lawyer
             </div>
             <button
