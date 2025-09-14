@@ -4,14 +4,14 @@ import { generateMemoId } from '../../../../lib/utils';
 import { OPENAI_CONFIG } from '../../../../lib/constants';
 import type { MemoGenerationRequest, Memo } from '../../../../lib/types';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: "https://openrouter.ai/api/v1",
-  dangerouslyAllowBrowser: true,
-});
-
 export async function POST(request: NextRequest) {
   try {
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+      baseURL: "https://openrouter.ai/api/v1",
+      dangerouslyAllowBrowser: true,
+    });
+
     const body: MemoGenerationRequest = await request.json();
     const { promptText, jurisdiction, legalArea, urgency } = body;
 
